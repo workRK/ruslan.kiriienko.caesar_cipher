@@ -26,7 +26,7 @@ public class FileService {
     }
 
     public void writeFile(String writeFilePath, String content) {
-        try (FileWriter fileWriter = new FileWriter(filePath);
+        try (FileWriter fileWriter = new FileWriter(writeFilePath);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
             bufferedWriter.write(content);
         } catch (IOException e) {
