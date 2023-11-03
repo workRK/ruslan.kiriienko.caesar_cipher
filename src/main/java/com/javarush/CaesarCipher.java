@@ -9,5 +9,7 @@ public class CaesarCipher {
         String content = encryptorCaesar.encryptCaesar();
         BruteForceDecrypt bruteForceDecrypt = new BruteForceDecrypt(content);
         bruteForceDecrypt.bruteForceDecrypt();
+        DecryptorCaesar decryptorCaesar = new DecryptorCaesar(7, content);
+        System.out.println(decryptorCaesar.decryptCaesar());
     }
 }

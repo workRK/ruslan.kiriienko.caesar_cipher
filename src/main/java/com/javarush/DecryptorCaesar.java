@@ -1,9 +1,9 @@
 package com.javarush;
 
 public class DecryptorCaesar {
-    private int key;
-    private String content;
-    private String alphabet;
+    private int key; // Зберігає ключ для розшифровування
+    private String content; // Зберігає зашифрований текст
+    private String alphabet; // Зберігає алфавіт для визначення мови тексту
 
     public DecryptorCaesar(int key, String content) {
         this.key = key;
@@ -14,12 +14,14 @@ public class DecryptorCaesar {
         StringBuilder decryptedContent = new StringBuilder();
         LanguageDetector languageDetector = new LanguageDetector();
 
+        // Визначаємо алфавіт відповідно до мови тексту
         if (languageDetector.containsLatin(content)) {
-            alphabet = "abcdefghijklmnopqrstuvwxyz";
+            alphabet = "abcdefghijklmnopqrstuvwxyz"; // Англійський алфавіт
         } else if (languageDetector.containsCyrillic(content)) {
-            alphabet = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя";
+            alphabet = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"; // Український алфавіт
         } else {
             System.out.println("Мова не підтримується.");
+            return null; // Якщо мова не підтримується, повертаємо null
         }
 
         for (int i = 0; i < content.length(); i++) {
@@ -27,6 +29,7 @@ public class DecryptorCaesar {
             int charIndex = alphabet.indexOf(Character.toLowerCase(currentChar));
 
             if (charIndex != -1) {
+                // Розшифровуємо символ, використовуючи ключ і алфаві
                 char decryptedChar = alphabet.charAt((charIndex - key + alphabet.length()) % alphabet.length());
 
                 if (Character.isUpperCase(currentChar)) {
@@ -35,9 +38,10 @@ public class DecryptorCaesar {
                     decryptedContent.append(decryptedChar);
                 }
             } else {
+                // Якщо символ не входить до алфавіту, залишаємо без змін
                 decryptedContent.append(currentChar);
             }
         }
-        return decryptedContent.toString();
+        return decryptedContent.toString(); // Повертаємо розшифрований текст
     }
 }
