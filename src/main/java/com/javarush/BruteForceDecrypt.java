@@ -17,6 +17,7 @@ public class BruteForceDecrypt {
             alphabet = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя";
         } else {
             System.out.println("Мова не підтримується.");
+            return;
         }
 
         for (int key = 0; key < alphabet.length(); key++) {

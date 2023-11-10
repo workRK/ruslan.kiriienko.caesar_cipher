@@ -1,16 +1,10 @@
 package com.javarush;
 
 import java.io.*;
-import java.util.Scanner;
 
 public class FileService {
-    private String filePath;
 
-    public FileService(String filePath) {
-        this.filePath = filePath;
-    }
-
-    public String readFile() {
+    public String readFile(String filePath) {
         StringBuilder content = new StringBuilder();
         try (FileReader fileReader = new FileReader(filePath);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {

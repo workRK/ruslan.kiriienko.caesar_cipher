@@ -1,7 +1,7 @@
 package com.javarush;
 
 public class DecryptorCaesar {
-    private int key; // Зберігає ключ для розшифровування
+    private final int key; // Зберігає ключ для розшифровування
     private String content; // Зберігає зашифрований текст
     private String alphabet; // Зберігає алфавіт для визначення мови тексту
 

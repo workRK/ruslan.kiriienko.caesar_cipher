@@ -5,9 +5,9 @@ public class EncryptorCaesar {
     private String content;
     private String alphabet;
 
-    public EncryptorCaesar(int key, String content) {
-        this.key = key;
+    public EncryptorCaesar(String content, int key) {
         this.content = content;
+        this.key = key;
     }
 
     public String encryptCaesar() {
@@ -20,6 +20,7 @@ public class EncryptorCaesar {
             alphabet = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя";
         } else {
             System.out.println("Мова не підтримується.");
+            return null;
         }
 
         for (int i = 0; i < content.length(); i++) {
