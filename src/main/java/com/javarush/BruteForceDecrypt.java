@@ -21,7 +21,7 @@ public class BruteForceDecrypt {
         }
 
         for (int key = 0; key < alphabet.length(); key++) {
-            DecryptorCaesar decryptorCaesar = new DecryptorCaesar(key, content);
+            DecryptorCaesar decryptorCaesar = new DecryptorCaesar(content, key);
             String decryptedText = decryptorCaesar.decryptCaesar();
 
             System.out.println("Ключ: " + key + " - розшифрований текст: " + decryptedText);

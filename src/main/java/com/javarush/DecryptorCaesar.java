@@ -5,9 +5,9 @@ public class DecryptorCaesar {
     private String content; // Зберігає зашифрований текст
     private String alphabet; // Зберігає алфавіт для визначення мови тексту
 
-    public DecryptorCaesar(int key, String content) {
-        this.key = key;
+    public DecryptorCaesar(String content, int key) {
         this.content = content;
+        this.key = key;
     }
 
     public String decryptCaesar() {
