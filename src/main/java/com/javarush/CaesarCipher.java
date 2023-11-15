@@ -67,6 +67,8 @@ public class CaesarCipher {
                 bruteForceDecrypt.bruteForceDecrypt();
             }
 
+        } else {
+            System.out.println("Перевірте правильність введеної інформації, і повторіть спробу!");
         }
     }
 }
