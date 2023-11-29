@@ -1,15 +1,16 @@
 package com.javarush;
 
 public class BruteForceDecrypt {
-    private String content;
-    private String alphabet;
+    private final String content;
 
     public BruteForceDecrypt(String content) {
         this.content = content;
     }
 
-    public void bruteForceDecrypt() {
+    void bruteForceDecrypt() {
         LanguageDetector languageDetector = new LanguageDetector();
+
+        String alphabet;
 
         if (languageDetector.containsLatin(content)) {
             alphabet = "abcdefghijklmnopqrstuvwxyz";

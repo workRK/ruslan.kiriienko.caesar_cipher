@@ -2,17 +2,18 @@ package com.javarush;
 
 public class DecryptorCaesar {
     private final int key; // Зберігає ключ для розшифровування
-    private String content; // Зберігає зашифрований текст
-    private String alphabet; // Зберігає алфавіт для визначення мови тексту
+    private final String content; // Зберігає зашифрований текст
 
     public DecryptorCaesar(String content, int key) {
         this.content = content;
         this.key = key;
     }
 
-    public String decryptCaesar() {
+    String decryptCaesar() {
         StringBuilder decryptedContent = new StringBuilder();
         LanguageDetector languageDetector = new LanguageDetector();
+
+        String alphabet;
 
         // Визначаємо алфавіт відповідно до мови тексту
         if (languageDetector.containsLatin(content)) {

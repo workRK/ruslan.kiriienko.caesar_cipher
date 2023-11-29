@@ -4,7 +4,7 @@ import java.io.*;
 
 public class FileService {
 
-    public String readFile(String filePath) {
+    String readFile(String filePath) {
         StringBuilder content = new StringBuilder();
         try (FileReader fileReader = new FileReader(filePath);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
@@ -19,7 +19,7 @@ public class FileService {
         return content.toString();
     }
 
-    public void writeFile(String writeFilePath, String content) {
+    void writeFile(String writeFilePath, String content) {
         try (FileWriter fileWriter = new FileWriter(writeFilePath);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
             bufferedWriter.write(content);

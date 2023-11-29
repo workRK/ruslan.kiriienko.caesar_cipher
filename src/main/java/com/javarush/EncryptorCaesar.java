@@ -1,18 +1,19 @@
 package com.javarush;
 
 public class EncryptorCaesar {
-    private int key;
-    private String content;
-    private String alphabet;
+    private final int key;
+    private final String content;
 
     public EncryptorCaesar(String content, int key) {
         this.content = content;
         this.key = key;
     }
 
-    public String encryptCaesar() {
+    String encryptCaesar() {
         StringBuilder encryptContent = new StringBuilder();
         LanguageDetector languageDetector = new LanguageDetector();
+
+        String alphabet;
 
         if (languageDetector.containsLatin(content)) {
             alphabet = "abcdefghijklmnopqrstuvwxyz";
