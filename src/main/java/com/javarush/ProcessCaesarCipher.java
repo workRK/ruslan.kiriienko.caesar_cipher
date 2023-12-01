@@ -47,12 +47,10 @@ public class ProcessCaesarCipher {
         FileService fileService = new FileService();
         String content = fileService.readFile(filePath);
 
-        if (command.equals("ENCRYPT")) {
-            processEncryption(fileService, filePath, key, content);
-        } else if (command.equals("DECRYPT")) {
-            processDecryption(fileService, filePath, key, content);
-        } else if (command.equals("BRUTE_FORCE")) {
-            processBruteForce(new String[]{"BRUTE_FORCE", filePath});
+        switch (command) {
+            case "ENCRYPT" -> processEncryption(fileService, filePath, key, content);
+            case "DECRYPT" -> processDecryption(fileService, filePath, key, content);
+            case "BRUTE_FORCE" -> processBruteForce(new String[]{"BRUTE_FORCE", filePath});
         }
     }
 
